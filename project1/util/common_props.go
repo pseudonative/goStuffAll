@@ -1,19 +1,22 @@
 package util
 
-import "sync"
+import (
+	"sync"
+)
 
-// CPUUsed ... set to init
-var CPPUused int
+// CPUUsed ... its value is set in the 'init()' function of the main.
+var CPUUsed int
 
 // WaitG ...
-var WaitG syn.WaitGroup
+var WaitG sync.WaitGroup
 
 // Mu ...
 var Mu sync.Mutex
 
+// CheckErr ...
 func CheckErr(err error) {
 	if err != nil {
-		// pannic err
+		// panic(err)
 		panic(err.Error())
 	}
 }
